@@ -1,7 +1,3 @@
-.home {
-  padding: 20px 0;
-}
-
 .home h2 {
   font-size: 28px;
   margin-bottom: 8px;
@@ -12,6 +8,10 @@
   margin-bottom: 32px;
 }
 
+.home-content {
+  width: 100%;
+}
+
 .home-section {
   margin-bottom: 32px;
 }
@@ -20,48 +20,4 @@
   font-size: 20px;
   margin-bottom: 16px;
   color: var(--text-h);
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-}
-
-.card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px;
-  transition: box-shadow 0.2s;
-}
-
-.card:hover {
-  box-shadow: var(--shadow);
-}
-
-.card-placeholder {
-  width: 100%;
-  height: 120px;
-  background: var(--accent-bg);
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-
-.card h4 {
-  font-size: 16px;
-  margin: 0 0 4px;
-  color: var(--text-h);
-}
-
-.card p {
-  font-size: 14px;
-  color: var(--text);
-  margin: 0;
-}
-
-@media (max-width: 480px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }

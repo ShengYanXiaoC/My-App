@@ -74,12 +74,12 @@ function WaterfallGallery(): React.ReactElement {
   const estimatedHeightWithGap = estimatedCardHeight + gap
 
   const virtualizer = useVirtualizer({
-    count: status === 'ready' ? (items.length + 1) : 40,
-    lanes: lanesCount,
-    estimateSize: React.useCallback(() => estimatedHeightWithGap, [estimatedHeightWithGap]),
-    getScrollElement: getScrollParent,
-    overscan: 4,
-    measureElement: (element) => element?.getBoundingClientRect().height,
+    count: status === 'ready' ? (items.length + 1) : 40, //列表总长度
+    lanes: lanesCount, //列数
+    estimateSize: React.useCallback(() => estimatedHeightWithGap, [estimatedHeightWithGap]), //每项的预估高度
+    getScrollElement: getScrollParent, //获取滚动父元素
+    overscan: 4, //设置缓冲区 - 在可视区上下额外多渲染几项作为缓冲区，防止快速滚动时出现白屏
+    measureElement: (element) => element?.getBoundingClientRect().height, //测量项的高度
   })
 
   const virtualItems = virtualizer.getVirtualItems()
